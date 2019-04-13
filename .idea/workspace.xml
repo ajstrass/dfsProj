@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6670f036-6dfa-4250-8d9b-525d1190d444" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2016-18PitchingStatsDeviation" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LA-DashboardStats-2018" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LA-DashboardStats-2019" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdvancedStats" beforeDir="false" afterPath="$PROJECT_DIR$/AdvancedStats" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BattedBalls" beforeDir="false" afterPath="$PROJECT_DIR$/BattedBalls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DashboardStats" beforeDir="false" afterPath="$PROJECT_DIR$/DashboardStats" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_scraping.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_scraping.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strasRating.py" beforeDir="false" afterPath="$PROJECT_DIR$/strasRating.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AdvancedStats">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="390">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -115,8 +107,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/strasRating.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="495">
+              <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -323,14 +315,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="759" y="23" width="1161" height="1017" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.07192983" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.22280702" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32972974" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="2" weight="0.32885906" />
+      <window_info anchor="bottom" id="Python Console" order="2" weight="0.32864866" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32972974" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
@@ -429,15 +420,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AdvancedStats">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="390">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/strasRating.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="495">
+          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
         </state>
       </provider>
     </entry>
