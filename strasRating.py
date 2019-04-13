@@ -1,13 +1,12 @@
 from pitcher_dictionary import *
 #print(pitcherList)
 SSDict = {}
-leagueAverageStats = {}
 
+x = float('1')
+y = float('49')
 
-for cat in cats:
-    leagueAverageStats[cat] = (0, 0)
-
-
+z = x + y
+print(z)
 
 
 pitcherVals = {}
@@ -24,7 +23,7 @@ for pitcher in pitcherList:
     FBR = (FBR / 100) * 50
     xFIP = float(pitcherDict[pitcher]['xFIP-']) * 2.5
     whip = float(pitcherDict[pitcher]['WHIP']) * 12
-    siera = pitcherDict[pitcher]['SIERA'] * 2.5
+    siera = pitcherDict[pitcher]['SIERA'] * 2.5+
     HCR = pitcherDict[pitcher]['Hard%']
     HCR = float(HCR)
     HCR = (HCR / 100) * 50
