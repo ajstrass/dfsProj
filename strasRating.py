@@ -1,6 +1,15 @@
 from pitcher_dictionary import *
-print(pitcherList)
+#print(pitcherList)
 SSDict = {}
+leagueAverageStats = {}
+
+
+for cat in cats:
+    leagueAverageStats[cat] = (0, 0)
+
+
+
+
 pitcherVals = {}
 for pitcher in pitcherList:
     kPer9 = float(pitcherDict[pitcher]['K/9']) * 12
