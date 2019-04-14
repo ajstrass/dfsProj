@@ -2,12 +2,6 @@ from pitcher_dictionary import *
 #print(pitcherList)
 SSDict = {}
 
-x = float('1')
-y = float('49')
-
-z = x + y
-print(z)
-
 
 pitcherVals = {}
 for pitcher in pitcherList:
