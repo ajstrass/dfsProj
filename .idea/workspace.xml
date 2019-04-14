@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6670f036-6dfa-4250-8d9b-525d1190d444" name="Default Changelist" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/AdvancedStats" beforeDir="false" afterPath="$PROJECT_DIR$/AdvancedStats" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BattedBalls" beforeDir="false" afterPath="$PROJECT_DIR$/BattedBalls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DashboardStats" beforeDir="false" afterPath="$PROJECT_DIR$/DashboardStats" afterDir="false" />
@@ -13,6 +14,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/strasRating.py" beforeDir="false" afterPath="$PROJECT_DIR$/strasRating.py" afterDir="false" />
 >>>>>>> 8feecf9f18eda85c9383eaf7a5a0dc7bef26c879
+=======
+      <change beforePath="$PROJECT_DIR$/LA-DashboardStats-2019" beforeDir="false" afterPath="$PROJECT_DIR$/LA-DashboardStats-2019" afterDir="false" />
+>>>>>>> origin/league_average_data
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,11 +88,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="LA-DashboardStats-2019" value="4" />
           <entry key="py" value="301" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="PLAIN_TEXT" value="4" />
           <entry key="Python" value="301" />
         </counts>
       </usages-collector>
@@ -143,7 +149,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/strasRating.py">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -157,11 +163,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LA-DashboardStats-2019">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="17">
+              <caret line="1" column="93" selection-start-line="1" selection-start-column="93" selection-end-line="1" selection-end-column="93" />
             </state>
           </provider>
         </entry>
@@ -193,14 +199,15 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/league_average_stats.py" />
         <option value="$PROJECT_DIR$/strasRating.py" />
+        <option value="$PROJECT_DIR$/LA-DashboardStats-2019" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="506" />
-    <option name="y" value="15" />
-    <option name="width" value="774" />
-    <option name="height" value="678" />
+    <option name="x" value="759" />
+    <option name="y" value="22" />
+    <option name="width" value="1161" />
+    <option name="height" value="1017" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -375,6 +382,7 @@
   </component>
   <component name="ToolWindowManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <frame x="759" y="23" width="1161" height="1017" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -390,18 +398,21 @@
       <window_info anchor="bottom" id="Debug" order="7" weight="0.36510068" />
 =======
     <frame x="54" y="-8" width="2514" height="1096" extended-state="6" />
+=======
+    <frame x="55" y="-7" width="1393" height="975" extended-state="6" />
+>>>>>>> origin/league_average_data
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.04200323" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.076696165" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.32972974" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.37648457" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.32972974" />
       <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="5" weight="0.32779098" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.13929313" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.13895486" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.36460808" />
 >>>>>>> 8feecf9f18eda85c9383eaf7a5a0dc7bef26c879
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
@@ -485,6 +496,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/strasRating.py">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -497,6 +509,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> origin/league_average_data
     <entry file="file://$PROJECT_DIR$/league_average_stats.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -517,9 +531,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LA-DashboardStats-2019">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="34">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
 >>>>>>> 8feecf9f18eda85c9383eaf7a5a0dc7bef26c879
+=======
+        <state relative-caret-position="17">
+          <caret line="1" column="93" selection-start-line="1" selection-start-column="93" selection-end-line="1" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/strasRating.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+>>>>>>> origin/league_average_data
         </state>
       </provider>
     </entry>
