@@ -1,9 +1,14 @@
 import csv
+from pitcher_dictionary import *
 
 # Dictionary for storing all 2019 league avg stats
-las19Dict = {}
+lasDict19 = {}
+lasDict18 = {}
 
-las18Dict = {}
+
+for x in cats:
+    lasDict19[x] = 0
+    lasDict18[x] = 0
 
 # list of all catagories being stored
 laCats = []
@@ -15,28 +20,26 @@ with open('LA-DashboardStats-2019') as file:
     for row in reader:
         if count == 0:
             for c in row:
-                name = c + '_19'
-                las19Dict[name] = 0
+                lasDict19[c] = 0
                 laCats.append(c)
         if count == 1:
             for v in row:
-                las19Dict[laCats[sCount] + '_19'] = v
+                lasDict19[laCats[sCount]] = float(v)
                 sCount += 1
         count += 1
 
-# places 2019 dashboard stats into dictionary
+# places 2018 dashboard stats into dictionary
 with open('LA-DashboardStats-2018') as file:
     reader = csv.reader(file)
     count = 0
     for row in reader:
         if count == 0:
             for c in row:
-                name = c + '_18'
-                las19Dict[c] = 0
+                lasDict18[c] = 0
                 laCats.append(c)
         if count == 1:
             for v in row:
-                las19Dict[laCats[sCount] + '_18'] = v
+                lasDict18[laCats[sCount]] = float(v)
                 sCount += 1
         count += 1
 
@@ -47,12 +50,11 @@ with open('LA-AdvancedStats-2019') as file:
     for row in reader:
         if count == 0:
             for c in row:
-                name = c + '_19'
-                las19Dict[name] = 0
+                lasDict19[c] = 0
                 laCats.append(c)
         if count == 1:
             for v in row:
-                las19Dict[laCats[sCount] + '_19'] = v
+                lasDict19[laCats[sCount]] = float(v)
                 sCount += 1
         count += 1
 
@@ -63,12 +65,11 @@ with open('LA-BattedBalls-2019') as file:
     for row in reader:
         if count == 0:
             for c in row:
-                name = c + '_19'
-                las19Dict[name] = 0
+                lasDict19[c] = 0
                 laCats.append(c)
         if count == 1:
             for v in row:
-                las19Dict[laCats[sCount] + '_19'] = v
+                lasDict19[laCats[sCount]] = float(v)
                 sCount += 1
         count += 1
 
@@ -79,14 +80,13 @@ with open('LA-BattedBalls-2018') as file:
     for row in reader:
         if count == 0:
             for c in row:
-                name = c + '_18'
-                las19Dict[name] = 0
+                lasDict18[c] = 0
                 laCats.append(c)
         if count == 1:
             for v in row:
-                las19Dict[laCats[sCount] + '_18'] = v
+                lasDict18[laCats[sCount]] = float(v)
                 sCount += 1
         count += 1
 
 
-print(las19Dict)
+#print(lasDict19['ERA'])

@@ -13,18 +13,20 @@ for pitcher in pitcherList:
     GBR = float(GBR)
     GBR = (GBR/100) * 50
     FBR = pitcherDict[pitcher]['FB%']
+    FBR = FBR.rstrip('%')
     FBR = float(FBR)
     FBR = (FBR / 100) * 50
-    xFIP = float(pitcherDict[pitcher]['xFIP-']) * 2.5
     whip = float(pitcherDict[pitcher]['WHIP']) * 12
-    siera = pitcherDict[pitcher]['SIERA'] * 2.5
+    siera = float(pitcherDict[pitcher]['SIERA']) * 2.5
     HCR = pitcherDict[pitcher]['Hard%']
+    HCR = HCR.rstrip('%')
     HCR = float(HCR)
     HCR = (HCR / 100) * 50
     SCR = pitcherDict[pitcher]['Soft%']
+    SCR = SCR.rstrip('%')
     SCR = float(SCR)
     SCR = (SCR / 100) * 50
-    ssr = float(kPer9) - BBper9 + BABIP + GBR - FBR - xFIP - whip - siera - HCR + SCR
+    ssr = float(kPer9) - BBper9 + BABIP + GBR - FBR - whip - siera - HCR + SCR
     SSDict[pitcher] = ssr
 
 orderedList = []

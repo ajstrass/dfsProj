@@ -23,3 +23,6 @@ with open('LA-DashboardStats-2018') as file:
 
 #print(row2)
 #print(leagueAverageStats)
+
+
+
