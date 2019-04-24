@@ -37,6 +37,7 @@ with open('BattedBalls') as file:
                 if x != 'Name':
                     cats.append(x)
         count += 1
+#print(pitcherDict)
 pitcherDict.pop('Name')
 # creats the dictionary values for all categories
 # initialized to 0
@@ -64,5 +65,14 @@ with open('BattedBalls') as file:
     for row in reader:
         for pitcher in pitcherDict:
             if row[0] == pitcher:
-                for x in range(0, 17):
+                for x in range(0, 18):
                     pitcherDict[pitcher][cats[x + 30]] = row[x + 1]
+
+#print(pitcherDict)
+# Removes % sign from any rate values
+for pitcher in pitcherDict:
+    for category in pitcherDict[pitcher]:
+        if '%' in pitcherDict[pitcher][category]:
+            pitcherDict[pitcher][category] = pitcherDict[pitcher][category].rstrip(' %')
+
+#print(pitcherDict)

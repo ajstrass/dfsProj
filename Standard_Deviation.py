@@ -23,4 +23,4 @@ with open('Standard-Deviation-Data') as file:
                 sCount += 1
         count += 1
 
-#print(standardDeviationDict['K/BB'])
+#print(standardDeviationDict)

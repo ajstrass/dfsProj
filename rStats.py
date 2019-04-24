@@ -24,6 +24,7 @@ with open('LA-DashboardStats-2019') as file:
                 laCats.append(c)
         if count == 1:
             for v in row:
+                v = v.rstrip('%')
                 lasDict19[laCats[sCount]] = float(v)
                 sCount += 1
         count += 1
@@ -39,6 +40,7 @@ with open('LA-DashboardStats-2018') as file:
                 laCats.append(c)
         if count == 1:
             for v in row:
+                v = v.rstrip('%')
                 lasDict18[laCats[sCount]] = float(v)
                 sCount += 1
         count += 1
@@ -54,7 +56,24 @@ with open('LA-AdvancedStats-2019') as file:
                 laCats.append(c)
         if count == 1:
             for v in row:
+                v = v.rstrip('%')
                 lasDict19[laCats[sCount]] = float(v)
+                sCount += 1
+        count += 1
+
+# places 2019 advanced stats into dictionary
+with open('LA-AdvancedStats-2018') as file:
+    reader = csv.reader(file)
+    count = 0
+    for row in reader:
+        if count == 0:
+            for c in row:
+                lasDict18[c] = 0
+                laCats.append(c)
+        if count == 1:
+            for v in row:
+                v = v.rstrip('%')
+                lasDict18[laCats[sCount]] = float(v)
                 sCount += 1
         count += 1
 
@@ -69,6 +88,7 @@ with open('LA-BattedBalls-2019') as file:
                 laCats.append(c)
         if count == 1:
             for v in row:
+                v = v.rstrip('%')
                 lasDict19[laCats[sCount]] = float(v)
                 sCount += 1
         count += 1
@@ -84,9 +104,9 @@ with open('LA-BattedBalls-2018') as file:
                 laCats.append(c)
         if count == 1:
             for v in row:
+                v = v.rstrip('%')
                 lasDict18[laCats[sCount]] = float(v)
                 sCount += 1
         count += 1
 
 
-#print(lasDict19['ERA'])

@@ -76,7 +76,7 @@ for tr in trs:
     row = [td.text.replace('\n', '') for td in tds]
     df = df.append(pd.Series(row, index=columns), ignore_index=True)
 # converts data frame to csv
-df = df.drop(columns=['#', 'Team', 'BABIP'])
+df = df.drop(columns=['#', 'Team'])
 df = df.sort_values('Name')
 df.to_csv('BattedBalls', index=False)
 
