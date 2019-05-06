@@ -1,4 +1,3 @@
-from pitcher_dictionary import pitcherDict
 from rStats import *
 from Standard_Deviation import *
 

@@ -1,20 +1,6 @@
-from pitcher_dictionary import *
-from rStats import *
-from Standard_Deviation import *
-#print(pitcherList)
 from zScore_Pitcher import *
 SSDict = {}
 ZZDict = {}
-
-# ssr = float(kPer9) - BBper9 + BABIP + GBR - FBR - whip - siera - HCR + SCR
-
-
-
-# print(float(pitcherDict['Matt Harvey']['K%']))
-# print(float(lasDict18['K%']))
-# print(float(standardDeviationDict['K%']))
-# zScore = (float(pitcherDict['Matt Harvey']['K%']) - float(lasDict18['K%'])) / float(standardDeviationDict['K%'])
-# print(zScore)
 
 pitcherVals = {}
 for pitcher in pitcherList:
@@ -64,16 +50,9 @@ for pitcher in pitcherList:
     ssr = float(kPer9) - BBper9 + BABIP + GBR - FBR - whip - siera - HCR + SCR
     ZZDict[pitcher] = ssr
 
-#print(ZZDict)
-
-# orderedList = []
-# for x in pitcherList:
-#     orderedList.append((SSDict[x], x))
-#     orderedList.sort()
-# print(orderedList)
-
-orderedList2 = []
+orderedPitcherRanks = []
 for x in pitcherList:
-    orderedList2.append((ZZDict[x], x))
-    orderedList2.sort()
-print(orderedList2)
+    orderedPitcherRanks.append((ZZDict[x], x))
+    orderedPitcherRanks.sort()
+
+print(orderedPitcherRanks)

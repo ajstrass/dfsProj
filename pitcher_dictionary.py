@@ -68,11 +68,13 @@ with open('BattedBalls') as file:
                 for x in range(0, 18):
                     pitcherDict[pitcher][cats[x + 30]] = row[x + 1]
 
-#print(pitcherDict)
 # Removes % sign from any rate values
 for pitcher in pitcherDict:
     for category in pitcherDict[pitcher]:
-        if '%' in pitcherDict[pitcher][category]:
-            pitcherDict[pitcher][category] = pitcherDict[pitcher][category].rstrip(' %')
+        try:
+            if '%' in pitcherDict[pitcher][category]:
+                pitcherDict[pitcher][category] = pitcherDict[pitcher][category].rstrip(' %')
+        except:
+            "nothing"
 
 #print(pitcherDict)

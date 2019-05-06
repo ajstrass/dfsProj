@@ -8,7 +8,7 @@ sCount = 0
 for x in cats:
     standardDeviationDict[x] = 0
 
-# places 2019 dashboard stats into dictionary
+# places standard deviation stats into dictionary
 with open('Standard-Deviation-Data') as file:
     reader = csv.reader(file)
     count = 0
@@ -22,5 +22,3 @@ with open('Standard-Deviation-Data') as file:
                 standardDeviationDict[laCats[sCount]] = v
                 sCount += 1
         count += 1
-
-#print(standardDeviationDict)

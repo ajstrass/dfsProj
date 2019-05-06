@@ -1,7 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-
+from player_ID_dict import *
+from battersDict import *
 # user inputs date
 month = input('Enter Month \n')
 day = input('Enter Day \n')
@@ -9,7 +10,7 @@ year = input('Enter Year\n')
 
 print('Gathering Data for',month,'-',day,'-',year)
 # Custom URL to set the user entered day
-URL = 'https://www.fangraphs.com/leaders.aspx?pos=all&stats=sta&lg=all&qual=0&type=8&season='+year+'&month=0&season1='+year+'&ind=0&team=0&rost=0&age=0&filter=&players=p'+year+'-'+month+'-'+day
+URL = 'https://www.fangraphs.com/leaders.aspx?pos=all&stats=sta&lg=all&qual=0&type=8&season='+year+'&month=0&season1='+year+'&ind=0&team=0&rost=0&age=0&filter=&players=p'+year+'-'+month+'-'+day+'&page=1_50'
 print(URL)
 # start scrape
 response = requests.get(URL)
@@ -34,7 +35,7 @@ df.to_csv('DashboardStats', index=False)
 
 
 # Scrape advanced data
-URL = 'https://www.fangraphs.com/leaders.aspx?pos=all&stats=sta&lg=all&qual=0&type=1&season='+year+'&month=0&season1='+year+'&ind=0&team=0&rost=0&age=0&filter=&players=p'+year+'-'+month+'-'+day
+URL = 'https://www.fangraphs.com/leaders.aspx?pos=all&stats=sta&lg=all&qual=0&type=1&season='+year+'&month=0&season1='+year+'&ind=0&team=0&rost=0&age=0&filter=&players=p'+year+'-'+month+'-'+day+'&page=1_50'
 print(URL)
 # start scrape
 response = requests.get(URL)
@@ -58,7 +59,7 @@ df.to_csv('AdvancedStats', index=False)
 
 
 # Scrape BattedBalls data
-URL = 'https://www.fangraphs.com/leaders.aspx?pos=all&stats=sta&lg=all&qual=0&type=2&season='+year+'&month=0&season1='+year+'&ind=0&team=0&rost=0&age=0&filter=&players=p'+year+'-'+month+'-'+day
+URL = 'https://www.fangraphs.com/leaders.aspx?pos=all&stats=sta&lg=all&qual=0&type=2&season='+year+'&month=0&season1='+year+'&ind=0&team=0&rost=0&age=0&filter=&players=p'+year+'-'+month+'-'+day+'&page=1_50'
 print(URL)
 # start scrape
 response = requests.get(URL)
@@ -220,3 +221,19 @@ for tr in trs:
 # converts data frame to csv
 df = df.drop(columns=['#'])
 df.to_csv('LA-BattedBalls-2018', index=False)
+
+# # Scrape data for batters
+# playerID = pidDict['Bryce Harper']
+# print(playerID)
+# URL = 'https://www.fangraphs.com/statsplits.aspx?playerid='+playerID+'&season=2019'
+# print(URL)
+
+teamList = []
+
+
+for x in lineupDict:
+    teamList.append(x)
+
+# for team in teamList:
+#     for x in range(1, 10):
+#         print(lineupDict[team][x])
