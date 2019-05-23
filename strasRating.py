@@ -52,7 +52,7 @@ for pitcher in pitcherList:
 
 orderedPitcherRanks = []
 for x in pitcherList:
-    orderedPitcherRanks.append((ZZDict[x], x))
+    orderedPitcherRanks.append((ZZDict[x], x, pitcherDict[x]['Team']))
     orderedPitcherRanks.sort()
 
 print(orderedPitcherRanks)

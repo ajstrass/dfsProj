@@ -41,3 +41,5 @@ with open('lineupData.csv') as file:
 
 # pops cataegory names from dictionary
 lineupDict.pop('team code')
+
+print(lineupDict)

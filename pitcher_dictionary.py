@@ -77,4 +77,3 @@ for pitcher in pitcherDict:
         except:
             "nothing"
 
-#print(pitcherDict)

@@ -20,4 +20,6 @@ with open('playerIdCsv.csv') as file:
         for col in row:
             playerIdsdict[row[18]] = row[17]
 
+playerIdsdict['Griffin Canning'] = '19867'
+
 
