@@ -1,58 +1,78 @@
-from zScore_Pitcher import *
-SSDict = {}
-ZZDict = {}
+pitcherValueDict = {}
+from global_variables import *
 
-pitcherVals = {}
-for pitcher in pitcherList:
-    kPerc = float(pitcherDict[pitcher]['K%']) * 12
-    BBperc = float(pitcherDict[pitcher]['BB%']) * 12
-    BABIP = float(pitcherDict[pitcher]['BABIP']) * 50
-    GBR = pitcherDict[pitcher]['GB%']
-    GBR = GBR.rstrip("%")
-    GBR = float(GBR)
-    GBR = (GBR/100) * 50
-    FBR = pitcherDict[pitcher]['FB%']
-    FBR = FBR.rstrip('%')
-    FBR = float(FBR)
-    FBR = (FBR / 100) * 50
-    whip = float(pitcherDict[pitcher]['WHIP']) * 12
-    siera = float(pitcherDict[pitcher]['SIERA']) * 2.5
-    HCR = pitcherDict[pitcher]['Hard%']
-    HCR = HCR.rstrip('%')
-    HCR = float(HCR)
-    HCR = (HCR / 100) * 50
-    SCR = pitcherDict[pitcher]['Soft%']
-    SCR = SCR.rstrip('%')
-    SCR = float(SCR)
-    SCR = (SCR / 100) * 50
-    ssr = float(kPerc) - BBperc + BABIP + GBR - FBR - whip - siera - HCR + SCR
-    SSDict[pitcher] = ssr
+def set_pitcherRankings():
+    categories = ['K%', 'BB%', 'GB%', 'FB%', 'HR/FB', 'Soft%', 'Hard%', 'SIERA']
+    pitcherValueDict = {}
 
-pitcherZVals = {}
-for pitcher in pitcherList:
-    kPer9 = float(zScorePitcherDict[pitcher]['K/9'])
-    BBper9 = float(zScorePitcherDict[pitcher]['BB/9'])
-    BABIP = float(zScorePitcherDict[pitcher]['BABIP'])
-    GBR = pitcherDict[pitcher]['GB%']
-    GBR = float(GBR)
-    GBR = (GBR/100)
-    FBR = zScorePitcherDict[pitcher]['FB%']
-    FBR = float(FBR)
-    FBR = (FBR / 100)
-    whip = float(zScorePitcherDict[pitcher]['WHIP'])
-    siera = float(zScorePitcherDict[pitcher]['SIERA'])
-    HCR = zScorePitcherDict[pitcher]['Hard%']
-    HCR = float(HCR)
-    HCR = (HCR / 100)
-    SCR = zScorePitcherDict[pitcher]['Soft%']
-    SCR = float(SCR)
-    SCR = (SCR / 100)
-    ssr = float(kPer9) - BBper9 + BABIP + GBR - FBR - whip - siera - HCR + SCR
-    ZZDict[pitcher] = ssr
+    for pitcher in startingPitchers:
+        pitcherValueDict[pitcher] = {}
 
-orderedPitcherRanks = []
-for x in pitcherList:
-    orderedPitcherRanks.append((ZZDict[x], x, pitcherDict[x]['Team']))
-    orderedPitcherRanks.sort()
+    for pitcher in pitcherValueDict:
+        for year in yearList:
+            pitcherValueDict[pitcher][year] = 'NTF'
+        pitcherValueDict[pitcher]["TOTAL"] = 'NTF'
 
-print(orderedPitcherRanks)
+    for pitcher in startingPitchers:
+        for year in yearList:
+            netPos = 0
+            netNeg = 0
+            if pitcherDict[pitcher][year]['IP'] != 'NTF':
+                if pitcherDict[pitcher][year]['IP'] > 50:
+                    netPos = (zScorePitcherDict[pitcher][year]['K%'] * 1.75) + (
+                                zScorePitcherDict[pitcher][year]['GB%'] * .5) \
+                             + (zScorePitcherDict[pitcher][year]['Soft%'] * .5)
+                    netNeg = (zScorePitcherDict[pitcher][year]['BB%'] * -1.5) + (
+                                zScorePitcherDict[pitcher][year]['FB%'] * -0.5) \
+                             + (zScorePitcherDict[pitcher][year]['Hard%'] * -0.5) + (
+                                         zScorePitcherDict[pitcher][year]['SIERA'] * -2)
+                    pitcherValueDict[pitcher][year] = netPos + netNeg
+
+    for pitcher in startingPitchers:
+        sumList = []
+        yearsPlayed = 0
+        y1 = 0
+        y2 = 0
+        y3 = 0
+        y4 = 0
+        totalVal = 0
+        if pitcherValueDict[pitcher]['2019'] != 'NTF':
+            y1 = pitcherValueDict[pitcher]['2019']
+            yearsPlayed += 1
+            sumList.append((y1))
+        if pitcherValueDict[pitcher]['2018'] != 'NTF':
+            y2 = pitcherValueDict[pitcher]['2018']
+            yearsPlayed += 1
+            sumList.append((y2))
+        if pitcherValueDict[pitcher]['2017'] != 'NTF':
+            y3 = pitcherValueDict[pitcher]['2017']
+            yearsPlayed += 1
+            sumList.append(y3)
+        # if pitcherValueDict[pitcher]['2016'] != 'NTF':
+        #     y4 = pitcherValueDict[pitcher]['2016']
+        #     yearsPlayed += 1
+        #     sumList.append(y4)
+        if y1 != 0 and y2 != 0 and y3 != 0:
+            totalVal = (y1 * .75) + (y2 * .2) + (y3 * .05)
+            pitcherValueDict[pitcher]['TOTAL'] = totalVal
+        elif y1 != 0 and y2 != 0 and y3 == 0:
+            totalVal = (y1 * .80) + (y2 * .2)
+            pitcherValueDict[pitcher]['TOTAL'] = totalVal
+        elif y1 != 0 and y2 == 0 and y3 == 0:
+            totalVal = y1
+            pitcherValueDict[pitcher]['TOTAL'] = totalVal
+        elif y1 == 0 and y2 != 0 and y3 != 0:
+            totalVal = (y2 * .80) + (y3 * .20)
+            pitcherValueDict[pitcher]['TOTAL'] = totalVal
+        else:
+            pitcherValueDict[pitcher]['TOTAL'] = -100  # not enough data
+
+    orderedPitchers = []
+
+    for pitcher in pitcherValueDict:
+        orderedPitchers.append((pitcher, pitcherValueDict[pitcher]['TOTAL']))
+    orderedPitchers.sort(key=lambda tup: tup[1])
+
+
+
+

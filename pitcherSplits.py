@@ -5,7 +5,9 @@ import pandas as pd
 from player_ID_dict import *
 import csv
 from pitcherIDs import *
+from data_scraping import startingPitchers
 import time
+
 
 # https://www.fangraphs.com/statsplits.aspx?playerid=10131&position=P&season=0&split=0.2
 
@@ -26,7 +28,7 @@ pitcherDictRHB = {}
 
 splitCats = ['']
 
-for pitcher in pitcherList:
+for pitcher in startingPitchers:
     pitcherDictLHB[pitcher] = {}
     pitcherDictRHB[pitcher] = {}
 
@@ -42,10 +44,11 @@ for pitcher in pitcherDictLHB:
             pitcherDictLHB[pitcher][year][cat] = 'NTF'
             pitcherDictRHB[pitcher][year][cat] = 'NTF'
 
-for pitcher in pitcherList:
+for pitcher in startingPitchers:
     start = time.time()
     pitcherID = playerIdsdict[pitcher]
     URL = 'https://www.fangraphs.com/statsplits.aspx?playerid=' + pitcherID + '&position=P&season=0&split=0.1'
+    print(URL)
     # standardScrape
     ######################
     # start scrape
@@ -90,6 +93,7 @@ for pitcher in pitcherList:
     # creates frame of table
     df = pd.DataFrame(columns=columns)
     # finds table from website
+    print(URL)
     table = soup.find('table', attrs={'class': 'rgMasterTable', 'id': 'SeasonSplits1_dgSeason2_ctl00'}).tbody
     # parses table to get data
     trs = table.find_all('tr')
@@ -174,7 +178,7 @@ for pitcher in pitcherList:
     end = time.time()
     #print(end - start)
 
-for pitcher in pitcherList:
+for pitcher in startingPitchers:
     start = time.time()
     pitcherID = playerIdsdict[pitcher]
     URL = 'https://www.fangraphs.com/statsplits.aspx?playerid=' + pitcherID + '&position=P&season=0&split=0.2'

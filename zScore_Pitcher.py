@@ -1,41 +1,45 @@
-from rStats import *
-from Standard_Deviation import *
-
-zScorePitcherDict = {}
-
-categories = []
-
-for pitcher in pitcherDict:
-    zScorePitcherDict[pitcher] = {}
-    for category in pitcherDict[pitcher]:
-        zScorePitcherDict[pitcher][category] = 0
-        if category not in categories:
-            categories.append(category)
-categories.remove('Name')
-categories.remove('Team')
-categories.remove('SV')
-categories.remove('L')
-categories.remove('G')
-categories.remove('GS')
-categories.remove('WAR')
-categories.remove('IP')
-categories.remove('LOB%')
+from global_variables import *
 
 
-# print(zScorePitcherDict)
-#
-# print(float(pitcherDict['Mike Minor']['K%']))
-# print(float(lasDict18['K%']))
-# print(float(standardDeviationDict['K%']))
-# zScore = (float(pitcherDict['Mike Minor']['K%']) - float(lasDict18['K%'])) / float(standardDeviationDict['K%'])
-# print(zScore)
+def set_zscores():
+    zScorePitcherDict = {}
 
-for pitcher in pitcherDict:
-    for category in categories:
-        if float(standardDeviationDict[category]) != 0:
-            zScore = (float(pitcherDict[pitcher][category]) - float(lasDict18[category])) / float(standardDeviationDict[category])
-        else:
-            zScore = 1
-        zScorePitcherDict[pitcher][category] = zScore
+    for pitcher in startingPitchers:
+        zScorePitcherDict[pitcher] = {}
 
-# print(zScorePitcherDict['Mike Minor'])
+    for pitcher in zScorePitcherDict:
+        for year in yearList:
+            zScorePitcherDict[pitcher][year] = {}
+
+    for pitcher in zScorePitcherDict:
+        for year in yearList:
+            for cat in allCatsList:
+                zScorePitcherDict[pitcher][year][cat] = 'NTF'
+
+    # print(zScorePitcherDict)
+    #
+    # print(float(pitcherDict['Mike Minor']['K%']))
+    # print(float(lasDict18['K%']))
+    # print(float(standardDeviationDict['K%']))
+    # zScore = (float(pitcherDict['Mike Minor']['K%']) - float(lasDict18['K%'])) / float(standardDeviationDict['K%'])
+    # print(zScore)
+
+    for pitcher in startingPitchers:
+        for year in yearList:
+            for cat in zScoreCatList:
+                print(pitcher, year, cat)
+                print('pitcher', cat, pitcherDict[pitcher][year][cat])
+                print('las', cat, lasDict18[cat])
+                print('std', cat, standardDeviationDict[cat])
+                print('--------------')
+                if pitcherDict[pitcher][year][cat] != 'NTF':
+                    zScorePitcherDict[pitcher][year][cat] = (float(pitcherDict[pitcher][year][cat]) - float(
+                        lasDict18[cat])) / (standardDeviationDict[cat])
+                else:
+                    zScorePitcherDict[pitcher][year][cat] = "NTF"
+
+    for pitcher in zScorePitcherDict:
+        for year in yearList:
+            for cat in allCatsList:
+                if zScorePitcherDict[pitcher][year][cat] != 'NTF':
+                    zScorePitcherDict[pitcher][year][cat] = float(zScorePitcherDict[pitcher][year][cat])

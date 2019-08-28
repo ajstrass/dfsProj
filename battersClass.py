@@ -21,6 +21,8 @@ j = Batter('john', '1', 'right')
 for batter in listOfBatters:
     batterClassDict[batter] = Batter(batter, '0', 'f')
 
+print(batterClassDict['Dansby Swanson'].handedness)
+
 # P = .083
 # B = .079
 #
