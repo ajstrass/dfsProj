@@ -61,7 +61,7 @@ def update_data():
     set_zscores()
     set_pitcherSkill()
 
-def bullshit():
+def test():
     get_datascrape(entry_0.get(), entry_1.get(), entry_2.get())
     update_data()
     print_pitchersRanked()
@@ -103,7 +103,7 @@ entry_2.place(relx=.58, rely=.13, anchor='n', relwidth=0.07, relheight=.07)
 menu_0 = tk.OptionMenu(frame_2, menu0_var, *taskList)
 menu_0.place(relx=.5, rely=.25, anchor='n')
 
-button_0 = tk.Button(frame_1, text='Submit', command=combine_funcs(bullshit, frame_2.lift))
+button_0 = tk.Button(frame_1, text='Submit', command=combine_funcs(test, frame_2.lift))
 button_0.place(relx=.5, rely=.35, anchor='n')
 
 button_1 = tk.Button(frame_2, text='Submit2', command=lambda: do_task)
